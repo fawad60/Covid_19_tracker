@@ -5,7 +5,7 @@ import { NativeSelect, FormControl } from "@material-ui/core";
 
 import styles from "./Charts.module.css";
 const Charts = ({
-  data: { confirmed, deaths, recovered },
+  data: { cases, deaths, recovered },
   country,
   chartType,
   handleChartChange,
@@ -42,8 +42,8 @@ const Charts = ({
       }}
     />
   ) : null;
-
-  const barChart = confirmed ? (
+  console.log("test ", cases);
+  const barChart = cases ? (
     <Bar
       data={{
         labels: ["infected", "Recovered", "Deaths"],
@@ -56,7 +56,7 @@ const Charts = ({
               "rgba(0, 128, 0)",
               " rgba(37, 35, 35)",
             ],
-            data: [confirmed.value, recovered.value, deaths.value],
+            data: [cases, recovered, deaths],
           },
         ],
       }}
@@ -67,7 +67,7 @@ const Charts = ({
     />
   ) : null;
 
-  const DoughnutChart = confirmed ? (
+  const DoughnutChart = cases ? (
     <Doughnut
       data={{
         labels: ["infected", "Recovered", "Deaths"],
@@ -75,11 +75,11 @@ const Charts = ({
           {
             label: "People",
             backgroundColor: [
-              "rgba(255, 0, 0,0.95)",
-              "rgba(0, 128, 0)",
+              "rgba(255, 0, 0,0.9)",
+              "rgba(0, 128, 0,0.9)",
               " rgba(37, 35, 35)",
             ],
-            data: [confirmed.value, recovered.value, deaths.value],
+            data: [cases, recovered, deaths],
             borderWidth: 1,
             hoverOffset: 4,
           },

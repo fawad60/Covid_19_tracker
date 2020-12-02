@@ -4,7 +4,11 @@
 }
 
 .card {
-  margin: 0 2% !important;
+  margin: 20px 2% !important;
+}
+
+.Active {
+  border-bottom: 10px solid rgb(0, 6, 36);
 }
 
 .infected {
@@ -23,4 +27,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.ParentPosition {
+  position: relative;
+}
+
+.childPosition {
+  position: absolute;
+  right: 20px;
+  top: 50px;
 }

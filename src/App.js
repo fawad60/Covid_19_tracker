@@ -3,7 +3,9 @@ import "./App.css";
 import Cards from "./components/Cards/Card";
 import Charts from "./components/Charts/Charts";
 import CountryPicker from "./components/CountryPicker/CountryPicker";
+import CountryTable from "./components/CountryPicker/Countrytable";
 import { fetchData } from "./api";
+
 class App extends Component {
   state = {
     data: {},
@@ -13,7 +15,9 @@ class App extends Component {
 
   async componentDidMount() {
     const fetchedData = await fetchData();
-    this.setState({ data: fetchedData });
+    this.setState({ data: fetchedData }, () =>
+      console.log("state is ", fetchedData)
+    );
   }
 
   handleCountryChange = async (country) => {
@@ -23,7 +27,7 @@ class App extends Component {
   };
   handleChartChange = (chartType) => {
     this.setState({ chartType: chartType }, () =>
-      console.log("mystate", this.state)
+      console.log("mystate ", this.state)
     );
   };
   render() {
@@ -37,6 +41,7 @@ class App extends Component {
           data={data}
           handleCountryChange={this.handleCountryChange}
         />
+
         <Charts
           data={data}
           country={country}
