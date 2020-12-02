@@ -3,7 +3,6 @@ import "./App.css";
 import Cards from "./components/Cards/Card";
 import Charts from "./components/Charts/Charts";
 import CountryPicker from "./components/CountryPicker/CountryPicker";
-import CountryTable from "./components/CountryPicker/Countrytable";
 import { fetchData } from "./api";
 
 class App extends Component {
