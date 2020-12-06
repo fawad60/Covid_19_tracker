@@ -1,5 +1,5 @@
 # Visit it here
-(https://covid-19-tracker.fawad60.vercel.app/)
+https://covid-19-tracker.fawad60.vercel.app/
 
 # Getting Started with Create React App
 
